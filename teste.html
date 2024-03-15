@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Datilografado</title>
+    <style>
+        #texto-datilografado {
+            font-family: monospace;
+            font-size: 24px;
+            white-space: pre;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto-datilografado"></div>
+
+    <script>
+        const texto = "Olá, mundo! Este é um exemplo de texto datilografado.";
+        let index = 0;
+        const speed = 50; // Velocidade de digitação em milissegundos
+
+        function typeWriter() {
+            if (index <= texto.length) {
+                document.getElementById('texto-datilografado').textContent = texto.slice(0, index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        typeWriter();
+    </script>
+</body>
+</html>
